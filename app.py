@@ -211,9 +211,6 @@ elif page == "📈 Power BI Dashboard Showcase":
 # ---------------------------------------------------------
 elif page == "🔍 Interactive Ride Explorer":
     st.markdown('<div class="main-header">🔍 Interactive Ride Data Explorer</div>', unsafe_allow_html=True)
-elif page == "🔍 Interactive Ride Explorer":
-    st.markdown('<div class="main-header">🔍 Interactive Ride Data Explorer</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Filter raw ride records by booking status and payment method.</div>', unsafe_allow_html=True)
 st.write("Filter raw ride records by booking status and payment method.")
 c1, c2 = st.columns(2)
 with c1:
