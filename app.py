@@ -193,11 +193,14 @@ elif page == "📈 Power BI Dashboard Showcase":
     tab_names = ["Overall", "Vehicle Type", "Revenue", "Cancellation", "Ratings"]
     tabs = st.tabs(tab_names)
     image_files = [
-        "dashboard ss/Overall.png",
-        "dashboard ss/Vehicle_Type.png",
-        "dashboard ss/Revenue.png",
-        "dashboard ss/Cancellation.png",
-        "dashboard ss/Ratings.png"
+           image_files = [
+        "Overall.png",
+        "Vehicle_Type.png",
+        "Revenue.png",
+        "Cancellation.png",
+        "Ratings.png"
+    ]
+
     ]
 
     for tab, name, img_file in zip(tabs, tab_names, image_files):
