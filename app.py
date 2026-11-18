@@ -37,8 +37,7 @@ st.markdown("""
 # ---------------------------------------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv("OLA_Cleaned_July.csv", low_memory=False)
-    return df
+    return pd.read_csv("OLA_Cleaned_July.csv", low_memory=False)
 
 try:
     df = load_data()
@@ -212,7 +211,6 @@ elif page == "📈 Power BI Dashboard Showcase":
 # ---------------------------------------------------------
 elif page == "🔍 Interactive Ride Explorer":
     st.markdown('<div class="main-header">🔍 Interactive Ride Data Explorer</div>', unsafe_allow_html=True)
-
 elif page == "🔍 Interactive Ride Explorer":
     st.markdown('<div class="main-header">🔍 Interactive Ride Data Explorer</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-header">Filter raw ride records by booking status and payment method.</div>', unsafe_allow_html=True)
@@ -235,4 +233,3 @@ elif page == "🔍 Interactive Ride Explorer":
     ]
     st.write(f"Showing **{len(explorer_df):,}** matching rides (displaying first 100 rows):")
     st.dataframe(explorer_df[display_cols].head(100), use_container_width=True)
-
