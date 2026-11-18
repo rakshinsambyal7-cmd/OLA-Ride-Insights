@@ -193,7 +193,6 @@ elif page == "📈 Power BI Dashboard Showcase":
     tab_names = ["Overall", "Vehicle Type", "Revenue", "Cancellation", "Ratings"]
     tabs = st.tabs(tab_names)
     image_files = [
-           image_files = [
         "Overall.png",
         "Vehicle_Type.png",
         "Revenue.png",
@@ -201,38 +200,15 @@ elif page == "📈 Power BI Dashboard Showcase":
         "Ratings.png"
     ]
 
-    ]
-
     for tab, name, img_file in zip(tabs, tab_names, image_files):
         with tab:
             if os.path.exists(img_file):
                 st.image(img_file, use_container_width=True)
             else:
-                st.info(f"📸 Make sure your screenshot for **{name}** is saved as **`{img_file}`** inside your `dashboard ss` folder!")
+                st.info(f"📸 Make sure your screenshot for **{name}** is uploaded as **`{img_file}`** in your GitHub repository!")
 
 # ---------------------------------------------------------
 # PAGE 4: INTERACTIVE RIDE EXPLORER
 # ---------------------------------------------------------
 elif page == "🔍 Interactive Ride Explorer":
-
     st.markdown('<div class="main-header">🔍 Interactive Ride Data Explorer</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-header">Filter raw ride records by booking status and payment method.</div>', unsafe_allow_html=True)
-
-    c1, c2 = st.columns(2)
-    with c1:
-        status_options = sorted(filtered_df["Booking_Status"].dropna().astype(str).unique().tolist())
-        status_filter = st.multiselect(
-            "Booking Status:",
-            options=status_options,
-            default=status_options
-        )
-    with c2:
-        pay_options = ["All"] + sorted(filtered_df["Payment_Method"].dropna().astype(str).unique().tolist())
-        pay_filter = st.selectbox("Payment Method:", pay_options)
-
-    explorer_df = filtered_df[filtered_df["Booking_Status"].astype(str).isin(status_filter)]
-    if pay_filter != "All":
-        explorer_df = explorer_df[explorer_df["Payment_Method"].astype(str) == pay_filter]
-
-    st.write(f"Showing **{len(explorer_df):,}** matching rides (displaying first 250 rows):")
-    st.dataframe(explorer_df.head(250), use_container_width=True)
